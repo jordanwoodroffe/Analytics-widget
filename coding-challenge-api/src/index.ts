@@ -30,10 +30,10 @@ const ordersCsvPath = path.resolve(__dirname, "..", "data", "orders.csv");
 
 /* 
 Optimisations
- ** Filter and cache overdue orders - filter overdue orders during initalisation so the endpoint only traverses
-  cached overdue orders rather than the entire csv directly.
- ** Binary search - to handle the large array when initally sorting into ascending order.
- ** Efficient sorting, sorting only micro arrays, no expensive sorts.
+ - filter and cache overdue orders - filter overdue orders during initalisation so the endpoint only traverses
+   cached overdue orders rather than the entire csv directly.
+ - binary search - to handle the large array when initally sorting into ascending order.
+ - efficient sorting, sorting only micro arrays, no expensive sorts.
 */
 fs.createReadStream(storesCsvPath)
   .pipe(csvParser())
