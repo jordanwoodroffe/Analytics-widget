@@ -1,27 +1,31 @@
 import React, { useState } from "react";
-
 import styled from "styled-components";
+import OverdueOrdersTable from "./components/Table";
+import { ChakraProvider, Text } from "@chakra-ui/react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const AppWrapper = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: #cccccc;
+  position: fixed;
+  onwheel: (event) => event.stopPropagation();
+  background-color: #f4f4f4;
 `;
 
-const AppHeader = styled.header`
-  background-color: white;
+const AppHeader = styled.div`
+  background-color: #805ad5;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 2rem;
+  padding: 24px 32px 24px 32px;
 `;
 
-const HeaderText = styled.h1`
-  font-family: "Roboto", sans-serif;
-`;
-
-const Username = styled.span`
-  font-family: "Roboto", sans-serif;
+const TableContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
 `;
 
 interface User {
@@ -35,7 +39,8 @@ const App = () => {
   const [user, setUser] = useState<User | null>(null);
 
   React.useEffect(() => {
-    fetch("http://localhost:8080/user")
+    // Proxy is setup in package.json
+    fetch("/user")
       .then((results) => results.json())
       .then((data) => {
         setUser(data);
@@ -43,13 +48,19 @@ const App = () => {
   }, []);
 
   return (
-    <AppWrapper>
-      <AppHeader>
-        <HeaderText>Analytics Dashboard</HeaderText>
-        <Username>Welcome, {user ? user.firstName : "Guest"}!</Username>
-      </AppHeader>
-      {/** Dashboard - new widgets go here */}
-    </AppWrapper>
+    <Router>
+      <ChakraProvider>
+        <AppWrapper>
+          <AppHeader>
+            <Text fontWeight={500}>Analytics Dashboard</Text>
+            <Text>Welcome, {user ? user.firstName : "Guest"}!</Text>
+          </AppHeader>
+          <TableContainer>
+            <OverdueOrdersTable />
+          </TableContainer>
+        </AppWrapper>
+      </ChakraProvider>
+    </Router>
   );
 };
 
