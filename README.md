@@ -4,7 +4,7 @@ Added my own design flavour - if that's alright :)
 
 ![image](https://github.com/jordanwoodroffe/code-challenge/assets/37185972/0b02cea5-0930-472b-a264-cc1be30838d5)
 
-Things to note:
+## Things to note
 - URL query params work and can control the table/ open the table with filters applied
 - Sort is clickable and works, just gave it a minimalist design 
 
