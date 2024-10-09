@@ -21,7 +21,7 @@
 
 ## Requirements
 
-- Provided is a wireframe for a widget we would like you to build (wireframe.jpeg) The application helps marketplace sellers with cross-marketplace data insights. The widget we want you to build is a view of the orders that have been placed that are overdue for shipping.
+- Provided is a wireframe for a widget (wireframe.jpeg) The application helps marketplace sellers with cross-marketplace data insights. The widget is a view of the orders that have been placed that are overdue for shipping.
 - The data to populate the widget is provided in two .csv files (coding-challenge-api/data). The orders data is gzipped due to its size.
 - Create an REST api that reads in data from the csv and returns it to the front-end
   in the appropriate format
