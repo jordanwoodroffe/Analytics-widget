@@ -1,7 +1,5 @@
 # Coding Challenge
 
-Added my own design flavour - if that's alright :)
-
 ![image](https://github.com/jordanwoodroffe/code-challenge/assets/37185972/0b02cea5-0930-472b-a264-cc1be30838d5)
 
 ## Things to note
