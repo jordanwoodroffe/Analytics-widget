@@ -1,12 +1,12 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import OverdueOrdersTable from ".";
 import { BrowserRouter as Router } from "react-router-dom";
+import MovieTable from ".";
 
 test("Render table correctly", () => {
   render(
     <Router>
-      <OverdueOrdersTable />
+      <MovieTable />
     </Router>
   );
   const marketplaceHeader = screen.getByText("Marketplace");
